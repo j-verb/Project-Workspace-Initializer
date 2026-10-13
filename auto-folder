@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# Create a practical, language-agnostic project directory structure.
+set -Eeuo pipefail
+
+# Show the script's accepted argument without creating any directories.
+usage() {
+	printf 'Usage: %s [project-directory]\n' "${0##*/}"
+}
+
+# Handle help before validating the number of arguments.
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+	usage
+	exit 0
+fi
+
+# This script accepts at most one project directory.
+if (( $# > 1 )); then
+	usage >&2
+	exit 2
+fi
+
+# Default to the current directory and reject an existing non-directory path.
+project_dir=${1:-.}
+if [[ -e "$project_dir" && ! -d "$project_dir" ]]; then
+	printf 'Error: "%s" exists and is not a directory.\n' "$project_dir" >&2
+	exit 1
+fi
+
+# Create the standard project folders; mkdir -p leaves existing directories intact.
+mkdir -p -- \
+	"$project_dir/src" \
+	"$project_dir/tests" \
+	"$project_dir/docs" \
+	"$project_dir/scripts" \
+	"$project_dir/config" \
+	"$project_dir/assets/images" \
+	"$project_dir/assets/data" \
+	"$project_dir/build" \
+	"$project_dir/.github/workflows"
+
+printf 'Project folders created in: %s\n' "$project_dir"

@@ -1,0 +1,22 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  bash:
+    name: Bash syntax and tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check Bash syntax
+        run: bash -n auto-folder tests/auto-folder.bash
+
+      - name: Run tests
+        run: bash tests/auto-folder.bash

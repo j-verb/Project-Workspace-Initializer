@@ -1,0 +1,11 @@
+# Common local/editor files
+.DS_Store
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log
