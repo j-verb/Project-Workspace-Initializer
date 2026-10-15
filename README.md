@@ -3,6 +3,12 @@
 A small Bash utility that creates a practical, language-agnostic directory
 structure for a new project.
 
+## AI assistance
+
+AI tools assisted with parts of this project's documentation and development.
+The project maintainer is responsible for reviewing and maintaining the
+resulting code and documentation.
+
 ## Requirements
 
 - Bash
