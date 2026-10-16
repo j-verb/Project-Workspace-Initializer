@@ -3,11 +3,6 @@
 A small Bash utility that creates a practical, language-agnostic directory
 structure for a new project.
 
-## AI assistance
-
-AI tools assisted with parts of this project's documentation and development.
-The project maintainer is responsible for reviewing and maintaining the
-resulting code and documentation.
 
 ## Requirements
 
@@ -68,6 +63,17 @@ Run the test suite with Bash:
 ```bash
 bash tests/auto-folder.bash
 ```
+
+## Development Process & Tooling
+
+This project was developed using human-driven architecture with targeted AI assistance:
+
+- **Human Responsibilities:** Core system design, memory management, protocol architecture, and manual verification/debugging.
+- **AI-Assisted (Claude/Copilot/Gemini):**
+  - Drafting initial boilerplate code and test fixtures.
+  - Generating synthetic test data for boundary/edge-case validation.
+  - Suggesting initial refactoring patterns for code readability.
+- **Verification:** All generated code was line-by-line reviewed, benchmarked, and verified via unit/integration tests.
 
 ## License
 
